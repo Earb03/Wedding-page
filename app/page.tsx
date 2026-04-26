@@ -107,8 +107,6 @@ export default function Home() {
         <div className="heroOverlay" />
 
         <nav className="nav">
-          <span className="rsvp rsvpDisabled">RSVP pronto</span>
-
           <div className="navLinks">
             {navItems.map((item) => (
               <a key={item} href={sectionHref(item)}>
@@ -121,7 +119,11 @@ export default function Home() {
         <div className="heroContent">
           <p className="eyebrow">Junio 20, 2026 · 5:00 PM</p>
           <h1>Aritza & Edward</h1>
-          <p className="subtitle">Are getting married</p>
+          <p className="subtitle">We are getting married</p>
+
+          <button type="button" className="button heroRsvpButton" disabled>
+            RSVP pronto
+          </button>
         </div>
       </section>
 
@@ -170,8 +172,8 @@ export default function Home() {
           <p className="smallTitle">Programa</p>
           <h2>Itinerario</h2>
           <p>
-            Estos son los momentos principales que queremos compartir contigo. Si algún
-            horario cambia, lo actualizaremos aquí antes del gran día.
+            Estos son los momentos principales que queremos compartir contigo. Si
+            algún horario cambia, lo actualizaremos aquí antes del gran día.
           </p>
         </div>
 
@@ -301,8 +303,8 @@ export default function Home() {
           <p className="smallTitle">FAQ</p>
           <h2>Preguntas frecuentes</h2>
           <p>
-            Aquí reunimos algunas respuestas importantes para que puedas prepararte
-            con tranquilidad.
+            Aquí reunimos algunas respuestas importantes para que puedas
+            prepararte con tranquilidad.
           </p>
         </div>
 

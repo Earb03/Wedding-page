@@ -71,18 +71,19 @@ img {
   z-index: 2;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 24px;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 11px;
+  letter-spacing: 0.22em;
+  font-size: 12px;
 }
 
 .navLinks {
   display: flex;
-  gap: 18px;
+  gap: 26px;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
 }
 
 .navLinks a {
@@ -140,6 +141,9 @@ img {
   z-index: 1;
   text-align: center;
   margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* TYPOGRAPHY */
@@ -152,21 +156,27 @@ img {
   font-size: 13px;
 }
 
+.subtitle {
+  margin-top: 14px;
+  margin-bottom: 28px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
 h1,
 h2 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-script), 'Cormorant Garamond', serif;
   font-weight: 400;
 }
 
 h1 {
-  font-size: clamp(72px, 12vw, 164px);
-  line-height: 0.8;
+  font-size: clamp(82px, 12vw, 170px);
+  line-height: 0.95;
   margin: 0;
 }
 
 h2 {
-  font-size: clamp(42px, 7vw, 82px);
-  line-height: 0.9;
+  font-size: clamp(54px, 8vw, 92px);
+  line-height: 1;
   margin: 0 0 22px;
 }
 
@@ -942,13 +952,13 @@ footer p {
     letter-spacing: 0.24em;
   }
 
-  h1 {
-    font-size: clamp(58px, 20vw, 86px);
-  }
+h1 {
+  font-size: clamp(72px, 18vw, 110px);
+}
 
-  h2 {
-    font-size: clamp(40px, 15vw, 62px);
-  }
+h2 {
+  font-size: clamp(44px, 14vw, 70px);
+}
 
   h3 {
     font-size: 30px;
@@ -981,4 +991,24 @@ footer p {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+.heroRsvpButton {
+  margin-top: 8px;
+  background: rgba(255, 255, 255, 0.14);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(4px);
+  cursor: default;
+}
+
+.heroRsvpButton:hover {
+  transform: none;
+  background: rgba(255, 255, 255, 0.14);
+  color: white;
+  box-shadow: none;
+}
+
+.heroRsvpButton:disabled {
+  opacity: 1;
 }
