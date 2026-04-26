@@ -14,9 +14,8 @@ const navItems = [
   'Nuestra historia',
   'Programa',
   'Dress code',
-  'Regalos',
   'Información',
-  'Ubicación',
+  'Regalos',
   'Galería',
   'FAQ',
 ];
@@ -127,37 +126,45 @@ export default function Home() {
         </div>
       </section>
 
-      <Reveal as="section" id="nuestra-historia" className="intro sectionGrid">
-        <div>
-          <p className="smallTitle">El amor no se desperdicia</p>
-          <h2>Si se comparte</h2>
-        </div>
+<Reveal as="section" id="nuestra-historia" className="storyEditorial">
+  <div className="storyEditorialPhoto">
+    <Image
+      src="/images/vertical.png"
+      alt="Aritza y Edward en una escena de atardecer"
+      width={700}
+      height={1100}
+    />
+  </div>
 
-        <div className="photoCard">
-          <Image
-            src="/images/vertical.png"
-            alt="Aritza y Edward en una escena de atardecer"
-            width={432}
-            height={768}
-          />
-        </div>
+  <div className="storyEditorialContent">
+    <p className="storyEditorialQuote">
+      “Love is never wasted
+      <br />
+      when shared that’s why we chose
+      to share ours”
+    </p>
 
-        <div>
-          <h3>Por eso decidimos compartir el nuestro.</h3>
-          <p>
-            Queremos celebrar este momento con las personas que han formado parte
-            de nuestra historia.
-          </p>
-        </div>
-      </Reveal>
+    <div className="storyEditorialIllustration">
+      <Image
+        src="/images/story-illustration-transparent.png"
+        alt="Ilustración romántica de la pareja"
+        width={260}
+        height={260}
+      />
+    </div>
 
-      <Reveal as="section" className="verse">
-        <p>El Cantar de los Cantares 8:6</p>
-        <blockquote>
-          “Ponme como un sello sobre tu corazón, como un sello sobre tu brazo,
-          porque el amor es tan fuerte como la muerte...”
-        </blockquote>
-      </Reveal>
+    <div className="storyEditorialVerse">
+      <p>El Cantar de los Cantares 8:6</p>
+      <blockquote>
+        “Ponme como un sello sobre tu corazón,
+        <br />
+        como un sello sobre tu brazo,
+        <br />
+        porque el amor es tan fuerte como la muerte...”
+      </blockquote>
+    </div>
+  </div>
+</Reveal>
 
       <Reveal as="section" className="widePhoto">
         <Image
@@ -224,6 +231,34 @@ export default function Home() {
         </div>
       </Reveal>
 
+      <Reveal as="section" id="informacion" className="venue sectionGrid">
+        <Countdown targetDate={weddingDate} />
+
+        <div>
+          <p className="smallTitle">Información</p>
+          <h2>Cuándo y dónde</h2>
+          <p>
+            La ceremonia y celebración serán el sábado 20 de junio de 2026 a las
+            5:00 PM en el Instituto Técnico de Estudios Superiores en Medio
+            Ambiente y Recursos Naturales, en Jarabacoa.
+          </p>
+          <p>
+            Nos reuniremos en un ambiente natural y abierto para compartir una
+            tarde llena de amor, alegría y buenos recuerdos.
+          </p>
+        </div>
+
+        <Image
+          src="/images/monogram.png"
+          alt="Monograma A y E"
+          width={200}
+          height={242}
+          className="monogram"
+        />
+      </Reveal>
+
+      <MapSection />
+
       <Reveal as="section" id="regalos" className="gifts sectionGrid">
         <Image
           src="/images/hug.png"
@@ -249,33 +284,6 @@ export default function Home() {
           </a>
         </div>
       </Reveal>
-
-      <Reveal as="section" id="informacion" className="venue sectionGrid">
-        <Countdown targetDate={weddingDate} />
-
-        <div>
-          <p className="smallTitle">Lugar del evento</p>
-          <h2>ITESMARENA</h2>
-          <p>
-            La ceremonia y celebración serán en el Instituto Técnico de Estudios
-            Superiores en Medio Ambiente y Recursos Naturales, en Jarabacoa.
-          </p>
-          <p>
-            Nos reuniremos en un ambiente natural y abierto para compartir una
-            tarde llena de amor, alegría y buenos recuerdos.
-          </p>
-        </div>
-
-        <Image
-          src="/images/monogram.png"
-          alt="Monograma A y E"
-          width={200}
-          height={242}
-          className="monogram"
-        />
-      </Reveal>
-
-      <MapSection />
 
       <Reveal as="section" id="galeria" className="gallery">
         <Image

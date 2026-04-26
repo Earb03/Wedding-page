@@ -1,12 +1,5 @@
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
 import './globals.css';
-
-const pinyonScript = localFont({
-  src: './fonts/PinyonScript-Regular.ttf',
-  variable: '--font-script',
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   title: 'Aritza & Edward — Junio 20, 2026',
@@ -26,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={pinyonScript.variable}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
