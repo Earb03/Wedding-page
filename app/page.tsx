@@ -116,14 +116,16 @@ export default function Home() {
         </nav>
 
         <div className="heroContent">
-          <p className="eyebrow">Junio 20, 2026 · 5:00 PM</p>
           <h1>Aritza & Edward</h1>
+
           <p className="subtitle">We are getting married</p>
 
           <button type="button" className="button heroRsvpButton" disabled>
             RSVP pronto
           </button>
         </div>
+
+        <p className="heroBottomDate">Junio 20, 2026 · 5:00 PM</p>
       </section>
 
 <Reveal as="section" id="nuestra-historia" className="storyEditorial">
@@ -231,31 +233,39 @@ export default function Home() {
         </div>
       </Reveal>
 
-      <Reveal as="section" id="informacion" className="venue sectionGrid">
-        <Countdown targetDate={weddingDate} />
+ <Reveal as="section" id="informacion" className="infoSection">
+  <div className="infoTop">
+    <div className="infoTitle">
+      <p className="smallTitle">Detalles</p>
+      <h2>Información</h2>
+    </div>
 
-        <div>
-          <p className="smallTitle">Información</p>
-          <h2>Cuándo y dónde</h2>
-          <p>
-            La ceremonia y celebración serán el sábado 20 de junio de 2026 a las
-            5:00 PM en el Instituto Técnico de Estudios Superiores en Medio
-            Ambiente y Recursos Naturales, en Jarabacoa.
-          </p>
-          <p>
-            Nos reuniremos en un ambiente natural y abierto para compartir una
-            tarde llena de amor, alegría y buenos recuerdos.
-          </p>
-        </div>
+    <div className="infoText">
+      <p className="smallTitle">Cuándo y dónde</p>
+      <h3>Junio 20, 2026 · 5:00 PM</h3>
+      <p>
+        La ceremonia y celebración serán en el Instituto Técnico de Estudios
+        Superiores en Medio Ambiente y Recursos Naturales, en Jarabacoa.
+      </p>
+      <p>
+        Nos reuniremos en un ambiente natural y abierto para compartir una
+        tarde llena de amor, alegría y buenos recuerdos.
+      </p>
+    </div>
+  </div>
 
-        <Image
-          src="/images/monogram.png"
-          alt="Monograma A y E"
-          width={200}
-          height={242}
-          className="monogram"
-        />
-      </Reveal>
+  <div className="infoCountdown">
+    <Countdown targetDate={weddingDate} />
+  </div>
+
+  <Image
+    src="/images/monogram.png"
+    alt="Monograma A y E"
+    width={200}
+    height={242}
+    className="infoMonogram"
+  />
+</Reveal>
 
       <MapSection />
 
@@ -274,14 +284,9 @@ export default function Home() {
             lista con algunas cosas que nos agradaría tener.
           </p>
 
-          <a
-            className="button"
-            href={giftRegistryUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Ver lista de regalos
-          </a>
+<a className="button" href="/regalos">
+  Ver opciones de regalos
+</a>
         </div>
       </Reveal>
 
