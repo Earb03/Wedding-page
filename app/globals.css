@@ -79,17 +79,20 @@ img {
 
 .hero {
   position: relative;
-  min-height: 720px;
+  min-height: 820px;
+  height: 92vh;
   display: grid;
   place-items: center;
   overflow: hidden;
   color: white;
   isolation: isolate;
+  background: #f3dfaa;
 }
 
 .heroImage {
   object-fit: cover;
-  transform: scale(1.04);
+  object-position: 90% 80%;
+  transform: scale(1.08);
 }
 
 .heroOverlay {
@@ -98,9 +101,9 @@ img {
   z-index: 1;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.45),
-    rgba(0, 0, 0, 0.18),
-    rgba(0, 0, 0, 0.42)
+    rgba(0, 0, 0, 0.22),
+    rgba(0, 0, 0, 0.08),
+    rgba(0, 0, 0, 0.18)
   );
 }
 
@@ -243,9 +246,9 @@ p {
 /* STORY EDITORIAL / NUESTRA HISTORIA */
 
 .storyEditorial {
-  width: min(1360px, calc(100% - 40px));
+  width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
-  padding: 96px 0 88px;
+  padding: 48px 0 88px;
   display: grid;
   grid-template-columns: 620px 1fr;
   gap: 72px;
@@ -945,6 +948,11 @@ footer p {
     min-height: 620px;
   }
 
+  .heroImage {
+    object-position: 90% 78%;
+    transform: scale(1.12);
+  }
+
   .nav {
     align-items: flex-start;
   }
@@ -1093,6 +1101,11 @@ footer p {
 @media (max-width: 520px) {
   .hero {
     min-height: 560px;
+  }
+
+   .heroImage {
+    object-position: 90% 78%;
+    transform: scale(1.14);
   }
 
   .eyebrow,

@@ -96,7 +96,7 @@ export default function Home() {
     <main>
       <section id="inicio" className="hero">
         <Image
-          src="/images/hero.png"
+          src="/images/Hero.PNG"
           alt="Aritza y Edward frente al mar"
           fill
           priority
