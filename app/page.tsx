@@ -6,9 +6,6 @@ import FAQAccordion from './components/FAQAccordion';
 
 const weddingDate = '2026-06-20T17:00:00-04:00';
 
-const giftRegistryUrl =
-  'https://www.amazon.com/wedding/guest-view/3G1ZSEVJYDVOU';
-
 const navItems = [
   'Inicio',
   'Nuestra historia',
@@ -20,7 +17,7 @@ const navItems = [
   'FAQ',
 ];
 
-const colors = ['#6e477a', '#b9a0cf', '#b9dff0', '#f7f2e7', '#788a3e'];
+const reservedColors = ['#7e8b3d', '#b7d3e7', '#b39ccf', '#5d416e'];
 
 const programItems = [
   {
@@ -97,7 +94,7 @@ export default function Home() {
       <section id="inicio" className="hero">
         <Image
           src="/images/heroImage.png"
-          alt="Aritza y Edward frente al mar"
+          alt="Ilustración de Aritza y Edward"
           fill
           priority
           className="heroImage"
@@ -116,57 +113,65 @@ export default function Home() {
         </nav>
 
         <div className="heroContent">
-          <h1>Aritza & Edward</h1>
+          <h1 className="heroNames">
+            <span>Aritza</span>
+            <span className="heroConnector">&</span>
+            <span>Edward</span>
+          </h1>
 
           <p className="subtitle">We are getting married</p>
+        </div>
 
+        <div className="heroFooter">
           <button type="button" className="button heroRsvpButton" disabled>
             RSVP pronto
           </button>
-        </div>
 
-        <p className="heroBottomDate">Junio 20, 2026 · 5:00 PM</p>
+          <p className="heroBottomDate">
+            <span>Junio 20, 2026</span>
+            <span>5:00 PM</span>
+          </p>
+        </div>
       </section>
 
-<Reveal as="section" id="nuestra-historia" className="storyEditorial">
-  <div className="storyEditorialPhoto">
-    <Image
-      src="/images/vertical.png"
-      alt="Aritza y Edward en una escena de atardecer"
-      width={700}
-      height={1100}
-    />
-  </div>
+      <Reveal as="section" id="nuestra-historia" className="storyEditorial">
+        <div className="storyEditorialPhoto">
+          <Image
+            src="/images/vertical.png"
+            alt="Aritza y Edward en una escena de atardecer"
+            width={700}
+            height={1100}
+          />
+        </div>
 
-  <div className="storyEditorialContent">
-    <p className="storyEditorialQuote">
-      “Love is never wasted
-      <br />
-      when shared that’s why we chose
-      to share ours”
-    </p>
+        <div className="storyEditorialContent">
+          <p className="storyEditorialQuote">
+            <span>“Love is never wasted,</span>
+            <span>when shared, that’s why</span>
+            <span>we chose to share ours”</span>
+          </p>
 
-    <div className="storyEditorialIllustration">
-      <Image
-        src="/images/story-illustration-transparent.png"
-        alt="Ilustración romántica de la pareja"
-        width={260}
-        height={260}
-      />
-    </div>
+          <div className="storyEditorialIllustration">
+            <Image
+              src="/images/story-illustration-transparent.png"
+              alt="Ilustración romántica de la pareja"
+              width={260}
+              height={260}
+            />
+          </div>
 
-    <div className="storyEditorialVerse">
-      <p>El Cantar de los Cantares 8:6</p>
-      <blockquote>
-        “Ponme como un sello sobre tu corazón,
-        <br />
-        como un sello sobre tu brazo,
-        <br />
-        porque el amor es tan fuerte como la muerte...”
-      </blockquote>
-    </div>
-  </div>
-</Reveal>
+          <div className="storyEditorialVerse">
+            <p>El Cantar de los Cantares 8:6</p>
+            <blockquote>
+              “Ponme como un sello sobre tu corazón,
+              <br />
+              como un sello sobre tu brazo,
+              <br />
+              porque el amor es tan fuerte como la muerte...”
+            </blockquote>
+          </div>
+        </div>
+      </Reveal>
 
       <Reveal as="section" className="widePhoto">
         <Image
@@ -203,90 +208,138 @@ export default function Home() {
         </div>
       </Reveal>
 
-      <Reveal as="section" id="dress-code" className="dress sectionGrid">
-        <div>
-          <h2>Dress code</h2>
-          <p>
-            Queremos que te sientas increíble y que seas parte del ambiente de
-            este día. Nuestro dress code es elegante con un toque de color, pero
-            no es necesario seguirlo exactamente.
-          </p>
-          <p>
-            El evento será en un ambiente donde queremos que te sientas libre de
-            moverte, bailar y disfrutar, así que te sugerimos optar por telas
-            frescas y calzado cómodo.
-          </p>
-          <p>
-            Solo te pedimos evitar el blanco o tonos muy similares, ya que
-            estarán reservados para la novia.
-          </p>
-        </div>
+      <Reveal as="section" id="dress-code" className="dressSection">
+        <div className="dressGrid">
+          <div className="dressCopy">
+            <h2 className="dressCodeTitle">Dress code</h2>
 
-        <div className="paletteBox">
-          <p>Colores reservados para la boda</p>
+            <div className="dressText">
+              <p>
+                Queremos que te sientas increíble y que seas parte del ambiente
+                de este día. Pero sobre que te sientas cómodo contigo mismo.
+              </p>
 
-          <div className="swatches">
-            {colors.map((color) => (
-              <span key={color} style={{ backgroundColor: color }} />
-            ))}
+              <p>
+                Nuestro dress code es elegante con un toque de color, pero no es
+                necesario seguirlo exactamente. Además, el evento será en un
+                ambiente en el que queremos que te sientas libre de moverte,
+                bailar y disfrutar, así que te sugerimos optar por telas frescas
+                y calzado cómodo, porque parte de la celebración es al aire
+                libre.
+              </p>
+
+              <p>
+                Solo te pedimos evitar{' '}
+                <strong>el blanco o tonos muy similares</strong>, ya que estarán
+                reservados para la novia.
+              </p>
+            </div>
+          </div>
+
+          <div className="dressVisual">
+            <p className="paletteHeading">Colores reservados para la boda</p>
+
+            <div className="swatches swatchesArch">
+              {reservedColors.map((color) => (
+                <span key={color} style={{ backgroundColor: color }} />
+              ))}
+            </div>
+
+            <div className="dressIllustrations">
+              <Image
+                src="/images/dress-bouquet.png"
+                alt="Ilustración de ramo"
+                width={180}
+                height={180}
+              />
+              <Image
+                src="/images/dress-shoes.png"
+                alt="Ilustración de zapatos"
+                width={180}
+                height={180}
+              />
+            </div>
           </div>
         </div>
       </Reveal>
 
- <Reveal as="section" id="informacion" className="infoSection">
-  <div className="infoTop">
-    <div className="infoTitle">
-      <p className="smallTitle">Detalles</p>
-      <h2>Información</h2>
-    </div>
+      <Reveal as="section" id="informacion" className="infoSection">
+        <div className="infoIntro">
+          <div className="infoArtwork">
+            <Image
+              src="/images/info-rings.png"
+              alt="Ilustración de argollas"
+              width={420}
+              height={260}
+            />
+          </div>
 
-    <div className="infoText">
-      <p className="smallTitle">Cuándo y dónde</p>
-      <h3>Junio 20, 2026 · 5:00 PM</h3>
-      <p>
-        La ceremonia y celebración serán en el Instituto Técnico de Estudios
-        Superiores en Medio Ambiente y Recursos Naturales, en Jarabacoa.
-      </p>
-      <p>
-        Nos reuniremos en un ambiente natural y abierto para compartir una
-        tarde llena de amor, alegría y buenos recuerdos.
-      </p>
-    </div>
-  </div>
+          <div className="infoCopy">
+            <h2>¿Cuándo y dónde?</h2>
 
-  <div className="infoCountdown">
-    <Countdown targetDate={weddingDate} />
-  </div>
+            <div className="infoTextBlock">
+              <p>
+                La ceremonia y celebración serán el sábado 20 de junio de 2026 a
+                las 5:00 PM en el Instituto Técnico de Estudios Superiores en
+                Medio Ambiente y Recursos Naturales, en Jarabacoa.
+              </p>
 
-  <Image
-    src="/images/monogram.png"
-    alt="Monograma A y E"
-    width={200}
-    height={242}
-    className="infoMonogram"
-  />
-</Reveal>
+              <p>
+                Nos reuniremos en un ambiente natural y abierto para compartir
+                una tarde llena de amor, alegría y buenos recuerdos.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="infoCountdown">
+          <Countdown targetDate={weddingDate} />
+        </div>
+
+        <Image
+          src="/images/monogram.png"
+          alt="Monograma A y E"
+          width={200}
+          height={242}
+          className="infoMonogram"
+        />
+      </Reveal>
 
       <MapSection />
 
-      <Reveal as="section" id="regalos" className="gifts sectionGrid">
-        <Image
-          src="/images/hug.png"
-          alt="Aritza y Edward abrazados"
-          width={908}
-          height={1210}
-        />
+      <Reveal as="section" id="regalos" className="giftsSection">
+        <div className="giftsGrid">
+          <div className="giftsPhoto">
+            <Image
+              src="/images/hug.png"
+              alt="Aritza y Edward abrazados"
+              width={900}
+              height={1200}
+            />
+          </div>
 
-        <div>
-          <h2>Tu presencia es el mejor regalo que podemos pedir.</h2>
-          <p>
-            Pero si sientes el deseo de regalarnos algo, hicimos una pequeña
-            lista con algunas cosas que nos agradaría tener.
-          </p>
+          <div className="giftsContent">
+            <h2 className="giftsTitle">
+              <span>Tu presencia es</span>
+              <span>el mejor regalo</span>
+              <span>que podemos pedir.</span>
+            </h2>
 
-<a className="button" href="/regalos">
-  Ver opciones de regalos
-</a>
+            <div className="giftsText">
+              <p>
+                Pero si sientes el deseo de regalarnos algo, hicimos una pequeña
+                lista con algunas cosas que nos agradarían tener.
+              </p>
+
+              <p>
+                Aquí debajo dejamos un enlace a la lista de regalo.
+              </p>
+            </div>
+
+            <a className="button" href="/regalos">
+              Ver opciones de regalos
+            </a>
+          </div>
         </div>
       </Reveal>
 
