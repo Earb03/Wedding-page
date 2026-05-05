@@ -115,8 +115,8 @@ export default function Home() {
         <div className="heroContent">
           <h1 className="heroNames">
             <span>Aritza</span>
-            <span className="heroConnector">&</span>
-            <span>Edward</span>
+            <span className="heroConnector"> y </span>
+            <span className='heroEdward'>Edward</span>
           </h1>
 
           <p className="subtitle">We are getting married</p>
@@ -388,6 +388,9 @@ export default function Home() {
           <span>Contacto</span>
           <strong>Edward De La Rosa</strong>
           <a href="tel:+18294721317">829-472-1317</a>
+          <br />
+          <strong>Aritza Jarvis</strong>
+          <a href="tel:+18496382082">849-638-2082</a>
         </div>
       </footer>
     </main>

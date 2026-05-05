@@ -11,7 +11,7 @@ export default function MapSection() {
     <Reveal as="section" id="ubicacion" className="mapSection">
       <div className="mapContent">
         <p className="smallTitle">Ubicación</p>
-        <h2>Cómo llegar</h2>
+        <h2>¿Cómo llegar?</h2>
 
         <p>
           Queremos que llegues sin complicaciones. Aquí puedes ver la ubicación
