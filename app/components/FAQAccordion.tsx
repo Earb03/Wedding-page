@@ -5,6 +5,8 @@ import { useState } from 'react';
 type FAQItem = {
   question: string;
   answer: string;
+  href?: string;
+  linkLabel?: string;
 };
 
 type FAQAccordionProps = {
@@ -32,7 +34,15 @@ export default function FAQAccordion({ items }: FAQAccordionProps) {
             </button>
 
             <div className="faqAccordionPanel">
-              <p>{item.answer}</p>
+              <p>
+                {item.answer}
+                {item.href && item.linkLabel ? (
+                  <>
+                    {' '}
+                    <a href={item.href}>{item.linkLabel}</a>
+                  </>
+                ) : null}
+              </p>
             </div>
           </div>
         );

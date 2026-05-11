@@ -9,7 +9,6 @@ const weddingDate = '2026-06-20T17:00:00-04:00';
 const navItems = [
   'Inicio',
   'Nuestra historia',
-  'Programa',
   'Dress code',
   'Información',
   'Regalos',
@@ -75,8 +74,9 @@ const faqItems = [
   },
   {
     question: '¿Dónde confirmo asistencia?',
-    answer:
-      'La sección de RSVP estará disponible en una próxima versión de la página.',
+    answer: 'Puedes confirmar tu asistencia aquí:',
+    href: '/rsvp',
+    linkLabel: 'Ir al RSVP',
   },
 ];
 
@@ -123,9 +123,9 @@ export default function Home() {
         </div>
 
         <div className="heroFooter">
-          <button type="button" className="button heroRsvpButton" disabled>
-            RSVP pronto
-          </button>
+          <a className="button heroRsvpButton" href="/rsvp">
+            Confirmar asistencia
+          </a>
 
           <p className="heroBottomDate">
             <span>Junio 20, 2026</span>
@@ -181,7 +181,7 @@ export default function Home() {
         />
       </Reveal>
 
-      <Reveal as="section" id="programa" className="programSection">
+      {/* <Reveal as="section" id="programa" className="programSection">
         <div className="sectionHeader">
           <p className="smallTitle">Programa</p>
           <h2>Itinerario</h2>
@@ -206,7 +206,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </Reveal>
+      </Reveal> */}
 
       <Reveal as="section" id="dress-code" className="dressSection">
         <div className="dressGrid">

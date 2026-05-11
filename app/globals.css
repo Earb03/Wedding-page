@@ -393,6 +393,7 @@ p {
 
 .widePhoto img {
   object-fit: cover;
+  object-position: 50% 30%;
 }
 
 /* PROGRAM */
@@ -882,6 +883,12 @@ p {
   padding-bottom: 28px;
 }
 
+.faqAccordionPanel a {
+  color: var(--purple);
+  font-weight: 700;
+  border-bottom: 1px solid rgba(84, 58, 97, 0.35);
+}
+
 /* BUTTONS */
 
 .button {
@@ -915,18 +922,13 @@ p {
   color: white;
   border-color: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(4px);
-  cursor: default;
 }
 
 .heroRsvpButton:hover {
-  transform: none;
-  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.24);
   color: white;
-  box-shadow: none;
-}
-
-.heroRsvpButton:disabled {
-  opacity: 1;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
 }
 
 /* FOOTER */
@@ -1247,6 +1249,10 @@ p {
     white-space: normal;
   }
 
+  .widePhoto img {
+    object-position: 50% 28%;
+  }
+
   .programSection,
   .dressSection,
   .infoSection,
@@ -1337,6 +1343,10 @@ p {
 
   .storyEditorialVerse blockquote {
     font-size: 16px;
+  }
+
+  .widePhoto img {
+    object-position: 50% 24%;
   }
 
   .programStep {
