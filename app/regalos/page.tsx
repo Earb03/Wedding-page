@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import styles from './regalos.module.css';
 
 const googleFormUrl = 'PEGA_AQUI_EL_LINK_DE_TU_GOOGLE_FORM';
 
@@ -125,13 +126,13 @@ function giftSearchUrl(gift: Gift) {
 
 export default function GiftsPage() {
   return (
-    <main className="giftPage">
-      <section className="giftHero">
-        <Link href="/" className="giftBackLink">
+    <main className={styles.giftPage}>
+      <section className={styles.giftHero}>
+        <Link href="/" className={styles.giftBackLink}>
           Volver a la invitación
         </Link>
 
-        <p className="smallTitle">Lista de regalos</p>
+        <p className={styles.eyebrow}>Lista de regalos</p>
         <h1>Aritza & Edward</h1>
 
         <p>
@@ -141,7 +142,7 @@ export default function GiftsPage() {
         </p>
 
         <a
-          className="button giftMainButton"
+          className={styles.giftMainButton}
           href={googleFormUrl}
           target="_blank"
           rel="noopener noreferrer"
@@ -150,7 +151,7 @@ export default function GiftsPage() {
         </a>
       </section>
 
-      <section className="giftInstructions">
+      <section className={styles.giftInstructions}>
         <div>
           <h2>Cómo funciona</h2>
         </div>
@@ -164,34 +165,34 @@ export default function GiftsPage() {
         </div>
       </section>
 
-      <section className="giftCategories">
+      <section className={styles.giftCategories}>
         {giftCategories.map((category) => (
-          <div className="giftCategory" key={category.title}>
-            <div className="giftCategoryHeader">
-              <p className="smallTitle">Categoría</p>
+          <div className={styles.giftCategory} key={category.title}>
+            <div className={styles.giftCategoryHeader}>
+              <p className={styles.eyebrow}>Categoría</p>
               <h2>{category.title}</h2>
             </div>
 
-            <div className="giftGrid">
+            <div className={styles.giftGrid}>
               {category.gifts.map((gift) => (
                 <article
-                  className={`giftCard ${
-                    gift.status === 'Reservado' ? 'isReserved' : ''
+                  className={`${styles.giftCard} ${
+                    gift.status === 'Reservado' ? styles.isReserved : ''
                   }`}
                   key={`${category.title}-${gift.name}`}
                 >
-                  <div className="giftImageWrap">
+                  <div className={styles.giftImageWrap}>
                     <img src={giftImage(gift.name)} alt={gift.name} />
                   </div>
 
-                  <div className="giftCardTop">
+                  <div className={styles.giftCardTop}>
                     <span>{gift.status}</span>
                   </div>
 
-                  <div className="giftCardBody">
+                  <div className={styles.giftCardBody}>
                     <h3>{gift.name}</h3>
 
-                    <div className="giftStores">
+                    <div className={styles.giftStores}>
                       {gift.stores.map((store) => (
                         <span key={store}>{store}</span>
                       ))}
@@ -200,9 +201,9 @@ export default function GiftsPage() {
                     {gift.note ? <p>{gift.note}</p> : null}
                   </div>
 
-                  <div className="giftActions">
+                  <div className={styles.giftActions}>
                     <a
-                      className="giftCardButton"
+                      className={styles.giftCardButton}
                       href={giftSearchUrl(gift)}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -211,7 +212,7 @@ export default function GiftsPage() {
                     </a>
 
                     <a
-                      className="giftCardButton"
+                      className={styles.giftCardButton}
                       href={googleFormUrl}
                       target="_blank"
                       rel="noopener noreferrer"

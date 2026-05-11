@@ -71,7 +71,7 @@ const faqItems = [
   {
     question: '¿Qué colores debo evitar?',
     answer:
-      'Te pedimos evitar blanco o tonos muy similares, ya que estarán reservados para la novia.',
+      'Te pedimos evitar blanco o tonos muy similares, ya que estarán reservados para la novia. También evita los colores de la paleta del dress code, porque estarán reservados para la boda.',
   },
   {
     question: '¿Dónde confirmo asistencia?',
@@ -231,7 +231,8 @@ export default function Home() {
               <p>
                 Solo te pedimos evitar{' '}
                 <strong>el blanco o tonos muy similares</strong>, ya que estarán
-                reservados para la novia.
+                reservados para la novia. También te pedimos no usar los colores
+                mostrados en la paleta, porque estarán reservados para la boda.
               </p>
             </div>
           </div>

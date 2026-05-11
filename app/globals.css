@@ -200,7 +200,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 35px;
+  gap: clamp(14px, 2.4vw, 35px);
   font-family: var(--font-script);
   font-size: clamp(78px, 8.6vw, 150px);
   line-height: 0.9;
@@ -210,7 +210,7 @@ main {
 }
 
 .heroEdward {
-  gap: -2px;
+  display: inline-block;
 }
 
 .heroConnector {
@@ -280,7 +280,7 @@ p {
   width: min(1120px, calc(100% - 40px));
   margin: 0 auto;
   display: grid;
-  gap: 64px;
+  gap: clamp(34px, 5vw, 64px);
   align-items: center;
   padding: 96px 0;
 }
@@ -304,7 +304,7 @@ p {
   padding: 48px 0 88px;
   display: grid;
   grid-template-columns: 620px 1fr;
-  gap: 72px;
+  gap: clamp(38px, 5vw, 72px);
   align-items: start;
 }
 
@@ -406,7 +406,7 @@ p {
 .programTimeline {
   position: relative;
   display: grid;
-  gap: 24px;
+  gap: clamp(18px, 2.4vw, 28px);
   width: min(880px, 100%);
   margin: 0 auto;
 }
@@ -485,7 +485,7 @@ p {
 .dressGrid {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
-  gap: 68px;
+  gap: clamp(38px, 5vw, 68px);
   align-items: start;
 }
 
@@ -569,7 +569,7 @@ p {
 .infoIntro {
   display: grid;
   grid-template-columns: 0.95fr 1.05fr;
-  gap: 70px;
+  gap: clamp(38px, 5vw, 70px);
   align-items: start;
 }
 
@@ -679,7 +679,7 @@ p {
   padding: 96px 0;
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
-  gap: 56px;
+  gap: clamp(34px, 5vw, 56px);
   align-items: center;
 }
 
@@ -747,7 +747,7 @@ p {
 .giftsGrid {
   display: grid;
   grid-template-columns: 0.88fr 1.12fr;
-  gap: 54px;
+  gap: clamp(32px, 5vw, 54px);
   align-items: center;
 }
 
