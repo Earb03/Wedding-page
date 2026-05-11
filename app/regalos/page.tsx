@@ -2,6 +2,7 @@ import Link from 'next/link';
 import styles from './regalos.module.css';
 
 const googleFormUrl = 'PEGA_AQUI_EL_LINK_DE_TU_GOOGLE_FORM';
+const amazonListUrl = 'https://www.amazon.com/wedding/guest-view/3G1ZSEVJYDVOU';
 
 type GiftStatus = 'Disponible' | 'Reservado';
 
@@ -10,7 +11,6 @@ type Gift = {
   stores: string[];
   note?: string;
   status: GiftStatus;
-  url?: string;
 };
 
 type GiftCategory = {
@@ -110,20 +110,6 @@ const giftCategories: GiftCategory[] = [
   },
 ];
 
-function giftImage(name: string) {
-  return `https://placehold.co/900x700/f8f4ec/543a61?text=${encodeURIComponent(
-    name,
-  )}`;
-}
-
-function giftSearchUrl(gift: Gift) {
-  if (gift.url) return gift.url;
-
-  return `https://www.google.com/search?q=${encodeURIComponent(
-    `${gift.name} hogar regalo`,
-  )}`;
-}
-
 export default function GiftsPage() {
   return (
     <main className={styles.giftPage}>
@@ -137,18 +123,29 @@ export default function GiftsPage() {
 
         <p>
           Tu presencia es el regalo más importante. Pero si deseas tener un
-          detalle con nosotros, preparamos esta selección de ideas de diferentes
-          tiendas.
+          detalle con nosotros, dejamos una lista sencilla con algunas ideas para
+          nuestro hogar.
         </p>
 
-        <a
-          className={styles.giftMainButton}
-          href={googleFormUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Avisar qué regalo elegiste
-        </a>
+        <div className={styles.heroActions}>
+          <a
+            className={styles.giftMainButton}
+            href={amazonListUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Abrir lista de Amazon
+          </a>
+
+          <a
+            className={styles.giftSecondaryButton}
+            href={googleFormUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Avisar qué regalo elegiste
+          </a>
+        </div>
       </section>
 
       <section className={styles.giftInstructions}>
@@ -158,9 +155,9 @@ export default function GiftsPage() {
 
         <div>
           <p>
-            Elige un regalo de la lista y luego completa el formulario para
-            avisarnos cuál vas a regalar. Actualizaremos la lista manualmente
-            para marcar los regalos reservados.
+            Puedes abrir nuestra lista de Amazon y elegir desde allí. Si compras
+            algo fuera de Amazon, completa el formulario para avisarnos y así
+            evitar regalos repetidos.
           </p>
         </div>
       </section>
@@ -173,56 +170,32 @@ export default function GiftsPage() {
               <h2>{category.title}</h2>
             </div>
 
-            <div className={styles.giftGrid}>
+            <ul className={styles.giftList}>
               {category.gifts.map((gift) => (
-                <article
+                <li
                   className={`${styles.giftCard} ${
                     gift.status === 'Reservado' ? styles.isReserved : ''
                   }`}
                   key={`${category.title}-${gift.name}`}
                 >
-                  <div className={styles.giftImageWrap}>
-                    <img src={giftImage(gift.name)} alt={gift.name} />
-                  </div>
-
-                  <div className={styles.giftCardTop}>
-                    <span>{gift.status}</span>
-                  </div>
-
                   <div className={styles.giftCardBody}>
-                    <h3>{gift.name}</h3>
+                    <div>
+                      <h3>{gift.name}</h3>
+
+                      {gift.note ? <p>{gift.note}</p> : null}
+                    </div>
 
                     <div className={styles.giftStores}>
                       {gift.stores.map((store) => (
                         <span key={store}>{store}</span>
                       ))}
                     </div>
-
-                    {gift.note ? <p>{gift.note}</p> : null}
                   </div>
 
-                  <div className={styles.giftActions}>
-                    <a
-                      className={styles.giftCardButton}
-                      href={giftSearchUrl(gift)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Ver referencia
-                    </a>
-
-                    <a
-                      className={styles.giftCardButton}
-                      href={googleFormUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Avisar que lo regalaré
-                    </a>
-                  </div>
-                </article>
+                  <span className={styles.giftStatus}>{gift.status}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         ))}
       </section>
