@@ -1,0 +1,95 @@
+[
+  {
+    "title": "Cocina",
+    "gifts": [
+      { "id": "set-cuchillos", "name": "Set de cuchillos", "stores": ["Lista de Amazon"] },
+      { "id": "olla-arrocera", "name": "Olla arrocera", "stores": ["Casa Cuesta"] },
+      { "id": "licuadora", "name": "Licuadora", "stores": ["Casa Cuesta"] },
+      { "id": "wafflera", "name": "Wafflera", "stores": ["Casa Cuesta", "Lista de Amazon"] },
+      { "id": "microondas", "name": "Microondas", "stores": ["Cualquier tienda"] },
+      {
+        "id": "vajilla-no-blanca",
+        "name": "Vajilla no blanca",
+        "stores": ["Cualquier tienda"],
+        "note": "Preferiblemente colorida o con textura."
+      },
+      {
+        "id": "vasos-colores",
+        "name": "Vasos de colores",
+        "stores": ["Cualquier tienda"],
+        "note": "Coloridos o con textura."
+      },
+      {
+        "id": "copas-vino",
+        "name": "Copas de vino",
+        "stores": ["Cualquier tienda"],
+        "note": "Con formas diferentes."
+      },
+      { "id": "set-bar", "name": "Set de bar", "stores": ["Lista de Amazon"] },
+      { "id": "organizadores-gavetas", "name": "Organizadores de gavetas", "stores": ["IKEA"] },
+      { "id": "contenedores-comida", "name": "Contenedores de comida", "stores": ["Amazon"] },
+      {
+        "id": "organizador-sartenes",
+        "name": "Estante organizador de sartenes",
+        "stores": ["Lista de Amazon"]
+      },
+      { "id": "set-ollas", "name": "Set de ollas", "stores": ["Lista de Amazon"] },
+      { "id": "organizadores-nevera", "name": "Organizadores de nevera", "stores": ["Lista de Amazon"] },
+      {
+        "id": "set-cantinas",
+        "name": "Set de cantinas",
+        "stores": ["Cualquier tienda"],
+        "note": "Plástico o cristal."
+      },
+      { "id": "olla-presion", "name": "Olla de presión", "stores": ["Cualquier tienda"] }
+    ]
+  },
+  {
+    "title": "Habitación",
+    "gifts": [
+      { "id": "cojines-mix-match", "name": "Cojines mix & match", "stores": ["IKEA"] },
+      { "id": "alfombra-pequena", "name": "Alfombra pequeña", "stores": ["IKEA"] },
+      {
+        "id": "duvet-edredon-simple",
+        "name": "Duvet / edredón simple",
+        "stores": ["IKEA", "Shein"],
+        "note": "Puede ser solo el relleno."
+      },
+      {
+        "id": "sabanas",
+        "name": "Sábanas",
+        "stores": ["Cualquier tienda"],
+        "note": "Queen XL - 60x80. Sin preferencia de color."
+      }
+    ]
+  },
+  {
+    "title": "Sala",
+    "gifts": [
+      { "id": "jarrones-ceramica", "name": "Jarrones de cerámica", "stores": ["IKEA"] },
+      { "id": "lamparas-mesa", "name": "Lámparas de mesa", "stores": ["IKEA", "Lista de Amazon"] },
+      { "id": "alfombra", "name": "Alfombra", "stores": ["IKEA", "Lista de Amazon"] },
+      { "id": "cortinas-blackout", "name": "Cortinas blackout", "stores": ["Cualquier tienda china"] },
+      { "id": "organizador-zapatos", "name": "Organizador de zapatos", "stores": ["IKEA"] },
+      { "id": "ottoman", "name": "Ottoman", "stores": ["Lista de Amazon"] }
+    ]
+  },
+  {
+    "title": "Baño y limpieza",
+    "gifts": [
+      { "id": "toallas-bano", "name": "Toallas de baño", "stores": ["Cualquier tienda"] },
+      { "id": "cesta-ropa", "name": "Cesta separadora de ropa", "stores": ["Lista de Amazon"] },
+      { "id": "aspiradora", "name": "Aspiradora", "stores": ["Casa Cuesta", "Amazon"] },
+      { "id": "tabla-plancha", "name": "Tabla de plancha", "stores": ["Cualquier tienda"] }
+    ]
+  },
+  {
+    "title": "Electrónica",
+    "gifts": [
+      { "id": "bombillos-inteligentes", "name": "Bombillos inteligentes", "stores": ["Lista de Amazon"] },
+      { "id": "echo-dot-alexa", "name": "Echo Dot Alexa", "stores": ["Lista de Amazon"] },
+      { "id": "plancha-vapor", "name": "Plancha a vapor", "stores": ["Lista de Amazon"] },
+      { "id": "extensiones-electricas", "name": "Extensiones eléctricas", "stores": ["Cualquier tienda"] }
+    ]
+  }
+]

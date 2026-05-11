@@ -378,20 +378,30 @@ export default function Home() {
         <FAQAccordion items={faqItems} />
       </Reveal>
 
-      <footer>
-        <p className="smallTitle">Aritza & Edward</p>
-        <h2>Junio 20, 2026</h2>
-        <p>
-          Con amor, gracias por ser parte de nuestra historia. Nos vemos pronto.
-        </p>
+      <footer className="siteFooter">
+        <div className="footerInner">
+          <p className="footerNames">Aritza & Edward</p>
+          <h2 className="footerDate">Junio 20, 2026</h2>
+          <p className="footerMessage">
+            Con amor, gracias por ser parte de nuestra historia. Nos vemos
+            pronto.
+          </p>
 
-        <div className="footerContact">
-          <span>Contacto</span>
-          <strong>Edward De La Rosa</strong>
-          <a href="tel:+18294721317">829-472-1317</a>
-          <br />
-          <strong>Aritza Jarvis</strong>
-          <a href="tel:+18496382082">849-638-2082</a>
+          <div className="footerContact">
+            <span>Contacto</span>
+
+            <div className="footerContactList">
+              <div className="footerContactItem">
+                <strong>Edward De La Rosa</strong>
+                <a href="tel:+18294721317">829-472-1317</a>
+              </div>
+
+              <div className="footerContactItem">
+                <strong>Aritza Jarvis</strong>
+                <a href="tel:+18496382082">849-638-2082</a>
+              </div>
+            </div>
+          </div>
         </div>
       </footer>
     </main>

@@ -931,37 +931,89 @@ p {
 
 /* FOOTER */
 
-footer {
+.siteFooter {
   background: #272723;
   color: white;
   text-align: center;
-  padding: 72px 20px;
+  padding: clamp(76px, 11vw, 124px) 20px clamp(84px, 12vw, 132px);
 }
 
-footer p {
+.footerInner {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  display: grid;
+  justify-items: center;
+}
+
+.siteFooter p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.footerNames {
+  margin: 0 0 clamp(16px, 2.4vw, 24px);
+  text-transform: uppercase;
+  letter-spacing: clamp(0.16em, 0.6vw, 0.32em);
+  font-family: var(--font-secondary);
+  font-size: clamp(20px, 3.6vw, 36px);
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.82);
+  white-space: nowrap;
+}
+
+.footerDate {
+  margin: 0;
+  font-family: var(--font-script);
+  font-size: clamp(54px, 9vw, 112px);
+  line-height: 0.9;
+  font-weight: 400;
+  color: white;
+  white-space: nowrap;
+}
+
+.footerMessage {
+  width: min(720px, 100%);
+  margin: clamp(28px, 5vw, 44px) auto 0;
+  font-size: clamp(18px, 2.2vw, 26px);
+  line-height: 1.7;
   color: rgba(255, 255, 255, 0.72);
 }
 
 .footerContact {
-  margin-top: 34px;
+  margin-top: clamp(46px, 7vw, 72px);
   display: grid;
-  gap: 6px;
+  gap: 18px;
   justify-items: center;
 }
 
 .footerContact span {
   text-transform: uppercase;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.38em;
   font-family: var(--font-secondary);
-  font-size: 11px;
+  font-size: 12px;
   color: rgba(255, 255, 255, 0.52);
 }
 
+.footerContactList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  gap: clamp(30px, 6vw, 76px);
+  align-items: start;
+}
+
+.footerContactItem {
+  display: grid;
+  gap: 10px;
+}
+
 .footerContact strong {
+  font-size: clamp(20px, 2.2vw, 28px);
+  line-height: 1.2;
   font-weight: 500;
 }
 
 .footerContact a {
+  font-size: clamp(20px, 2.2vw, 28px);
+  line-height: 1.2;
   color: rgba(255, 255, 255, 0.82);
 }
 
@@ -1353,6 +1405,35 @@ footer p {
 
   .locationCard {
     padding: 26px;
+  }
+
+  .siteFooter {
+    padding: 84px 18px 96px;
+  }
+
+  .footerNames {
+    font-size: clamp(18px, 5.2vw, 24px);
+    letter-spacing: 0.16em;
+  }
+
+  .footerDate {
+    font-size: clamp(42px, 12vw, 62px);
+  }
+
+  .footerMessage {
+    width: min(330px, 100%);
+    font-size: 20px;
+    line-height: 1.7;
+  }
+
+  .footerContactList {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .footerContact strong,
+  .footerContact a {
+    font-size: 22px;
   }
 }
 

@@ -6,16 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "seed:gifts": "node scripts/seed-gifts.mjs",
     "lint": "next lint"
   },
   "dependencies": {
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "firebase": "^12.13.0",
+    "firebase-admin": "^13.9.0",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
     "typescript": "latest"
-  },
-  "devDependencies": {}
+  }
 }
