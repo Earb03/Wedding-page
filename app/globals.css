@@ -971,23 +971,23 @@ p {
 }
 
 .footerNames {
-  margin: 0 0 clamp(16px, 2.4vw, 24px);
+  margin: 0 0 clamp(14px, 2.2vw, 22px);
   text-transform: uppercase;
-  letter-spacing: clamp(0.16em, 0.6vw, 0.32em);
+  letter-spacing: clamp(0.13em, 0.45vw, 0.24em);
   font-family: var(--font-secondary);
-  font-size: clamp(20px, 3.6vw, 36px);
+  font-size: clamp(30px, 5.2vw, 58px);
   line-height: 1;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.9);
   white-space: nowrap;
 }
 
 .footerDate {
   margin: 0;
   font-family: var(--font-script);
-  font-size: clamp(54px, 9vw, 112px);
-  line-height: 0.9;
+  font-size: clamp(36px, 4.8vw, 52px);
+  line-height: 1;
   font-weight: 400;
-  color: white;
+  color: rgba(255, 255, 255, 0.78);
   white-space: nowrap;
 }
 
@@ -1027,13 +1027,13 @@ p {
 }
 
 .footerContact strong {
-  font-size: clamp(20px, 2.2vw, 28px);
+  font-size: clamp(24px, 2.7vw, 34px);
   line-height: 1.2;
   font-weight: 500;
 }
 
 .footerContact a {
-  font-size: clamp(20px, 2.2vw, 28px);
+  font-size: clamp(24px, 2.7vw, 34px);
   line-height: 1.2;
   color: rgba(255, 255, 255, 0.82);
 }
@@ -1229,6 +1229,10 @@ p {
   }
 
   .mobileMenuToggle {
+    position: absolute;
+    top: 24px;
+    right: 18px;
+    z-index: 4;
     width: 44px;
     height: 44px;
     display: grid;
@@ -1251,49 +1255,41 @@ p {
   .mobileMenuBackdrop {
     position: fixed;
     inset: 0;
-    z-index: 20;
+    z-index: 50;
     display: block;
     visibility: hidden;
     pointer-events: none;
+    opacity: 0;
+    transition:
+      opacity 0.28s ease,
+      visibility 0.28s ease;
+    background: var(--cream);
   }
 
   .mobileMenuBackdrop.isOpen {
     visibility: visible;
     pointer-events: auto;
-  }
-
-  .mobileMenuScrim {
-    position: absolute;
-    inset: 0;
-    border: 0;
-    background: rgba(39, 39, 35, 0.44);
-    opacity: 0;
-    transition: opacity 0.25s ease;
-  }
-
-  .mobileMenuBackdrop.isOpen .mobileMenuScrim {
     opacity: 1;
   }
 
   .mobileMenuPanel {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: min(320px, 86vw);
-    height: 100%;
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
     display: grid;
-    align-content: start;
-    gap: 26px;
-    padding: 28px;
+    grid-template-rows: auto 1fr auto auto;
+    gap: clamp(22px, 4vh, 34px);
+    padding: 28px min(28px, 7vw) 34px;
     background: var(--cream);
     color: var(--ink);
-    transform: translateX(100%);
+    transform: translateY(14px);
     transition: transform 0.28s ease;
-    box-shadow: -24px 0 70px rgba(43, 41, 37, 0.18);
+    overflow: hidden;
   }
 
   .mobileMenuBackdrop.isOpen .mobileMenuPanel {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 
   .mobileMenuHeader {
@@ -1306,7 +1302,7 @@ p {
   .mobileMenuHeader p {
     margin: 0;
     text-transform: uppercase;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.24em;
     font-family: var(--font-secondary);
     font-size: 12px;
     color: var(--purple);
@@ -1325,16 +1321,51 @@ p {
 
   .mobileMenuLinks {
     display: grid;
-    gap: 8px;
+    gap: clamp(10px, 2vh, 18px);
+    align-content: center;
+    justify-items: center;
+    text-align: center;
+    min-height: 0;
   }
 
   .mobileMenuLinks a {
-    padding: 14px 0;
-    border-bottom: 1px solid rgba(43, 41, 37, 0.1);
+    padding: 4px 0;
     font-family: var(--font-secondary);
-    font-size: 28px;
+    font-size: clamp(31px, 8.4vw, 48px);
     line-height: 1.05;
     color: var(--ink);
+  }
+
+  .mobileMenuActions {
+    display: grid;
+    justify-items: center;
+  }
+
+  .mobileMenuActions a {
+    min-width: min(280px, 100%);
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px;
+    border: 1px solid var(--purple);
+    border-radius: 999px;
+    background: var(--purple);
+    color: white;
+    font-family: var(--font-secondary);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .mobileMenuDate {
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    font-family: var(--font-secondary);
+    font-size: 11px;
+    color: var(--muted);
   }
 
   .heroContent {
@@ -1551,12 +1582,12 @@ p {
   }
 
   .footerNames {
-    font-size: clamp(18px, 5.2vw, 24px);
-    letter-spacing: 0.16em;
+    font-size: clamp(24px, 6.8vw, 32px);
+    letter-spacing: 0.12em;
   }
 
   .footerDate {
-    font-size: clamp(42px, 12vw, 62px);
+    font-size: clamp(32px, 9vw, 44px);
   }
 
   .footerMessage {
@@ -1572,7 +1603,7 @@ p {
 
   .footerContact strong,
   .footerContact a {
-    font-size: 22px;
+    font-size: 26px;
   }
 }
 

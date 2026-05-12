@@ -116,17 +116,18 @@ export default function Home() {
               </a>
             ))}
           </div>
-
-          <MobileMenu
-            links={[
-              ...navLinks,
-              {
-                label: 'RSVP',
-                href: '/rsvp',
-              },
-            ]}
-          />
         </nav>
+
+        <MobileMenu
+          links={[
+            ...navLinks,
+            {
+              label: 'Confirmar asistencia',
+              href: '/rsvp',
+              isPrimary: true,
+            },
+          ]}
+        />
 
         <div className="heroContent">
           <h1 className="heroNames">
@@ -232,7 +233,7 @@ export default function Home() {
             <div className="dressText">
               <p>
                 Queremos que te sientas increíble y que seas parte del ambiente
-                de este día. Pero sobre que te sientas cómodo contigo mismo.
+                de este día. Pero sobre todo que te sientas cómodo contigo mismo.
               </p>
 
               <p>

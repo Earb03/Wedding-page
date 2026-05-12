@@ -1,10 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 type MobileMenuLink = {
   label: string;
   href: string;
+  isPrimary?: boolean;
 };
 
 type MobileMenuProps = {
@@ -13,10 +14,31 @@ type MobileMenuProps = {
 
 export default function MobileMenu({ links }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const standardLinks = links.filter((link) => !link.isPrimary);
+  const primaryLinks = links.filter((link) => link.isPrimary);
 
   function closeMenu() {
     setIsOpen(false);
   }
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        closeMenu();
+      }
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen]);
 
   return (
     <>
@@ -33,14 +55,7 @@ export default function MobileMenu({ links }: MobileMenuProps) {
       </button>
 
       <div className={`mobileMenuBackdrop ${isOpen ? 'isOpen' : ''}`}>
-        <button
-          type="button"
-          className="mobileMenuScrim"
-          onClick={closeMenu}
-          aria-label="Cerrar menú"
-        />
-
-        <aside className="mobileMenuPanel" aria-hidden={!isOpen}>
+        <section className="mobileMenuPanel" aria-hidden={!isOpen}>
           <div className="mobileMenuHeader">
             <p>Aritza & Edward</p>
             <button type="button" onClick={closeMenu} aria-label="Cerrar menú">
@@ -48,14 +63,24 @@ export default function MobileMenu({ links }: MobileMenuProps) {
             </button>
           </div>
 
-          <nav className="mobileMenuLinks">
-            {links.map((link) => (
+          <nav className="mobileMenuLinks" aria-label="Menú principal">
+            {standardLinks.map((link) => (
               <a href={link.href} key={link.href} onClick={closeMenu}>
                 {link.label}
               </a>
             ))}
           </nav>
-        </aside>
+
+          <div className="mobileMenuActions">
+            {primaryLinks.map((link) => (
+              <a href={link.href} key={link.href} onClick={closeMenu}>
+                {link.label}
+              </a>
+            ))}
+          </div>
+
+          <p className="mobileMenuDate">Junio 20, 2026</p>
+        </section>
       </div>
     </>
   );
