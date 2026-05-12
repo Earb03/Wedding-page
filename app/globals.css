@@ -80,6 +80,17 @@ main {
   overflow-x: hidden;
 }
 
+.autoplayMusic {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  left: -10px;
+  bottom: -10px;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* HERO */
 
 .hero {

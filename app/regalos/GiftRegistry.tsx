@@ -222,9 +222,15 @@ export default function GiftRegistry() {
 
         <div>
           <p>
-            Puedes abrir nuestra lista de Amazon y elegir desde allí. Si compras
-            algo fuera de Amazon, reserva el regalo aquí para ayudarnos a evitar
-            regalos repetidos.
+            Puedes abrir nuestra lista de Amazon y elegir un regalo desde allí.
+            Las tiendas que aparecen son solo sugerencias, así que también
+            puedes comprar el regalo en tu tienda de preferencia.
+          </p>
+
+          <p>
+            Si compras algo fuera de Amazon, por favor resérvalo aquí. Cuando un
+            regalo aparezca como “reservado”, significa que alguien ya lo compró
+            o lo eligió, y así evitamos regalos repetidos.
           </p>
 
           <p className={styles.giftCounter}>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import AutoplayMusic from './components/AutoplayMusic';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -19,7 +20,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body>
+        {children}
+        <AutoplayMusic />
+      </body>
     </html>
   );
 }
