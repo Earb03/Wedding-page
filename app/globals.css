@@ -178,6 +178,14 @@ main {
   transform-origin: left;
 }
 
+.mobileMenuToggle {
+  display: none;
+}
+
+.mobileMenuBackdrop {
+  display: none;
+}
+
 .heroContent {
   position: absolute;
   top: clamp(104px, 13vh, 145px);
@@ -1212,11 +1220,121 @@ p {
   }
 
   .nav {
-    align-items: flex-start;
+    justify-content: flex-end;
+    align-items: center;
   }
 
   .navLinks {
     display: none;
+  }
+
+  .mobileMenuToggle {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-content: center;
+    gap: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+    backdrop-filter: blur(4px);
+  }
+
+  .mobileMenuToggle span {
+    width: 18px;
+    height: 1px;
+    display: block;
+    background: currentColor;
+  }
+
+  .mobileMenuBackdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: block;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .mobileMenuBackdrop.isOpen {
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .mobileMenuScrim {
+    position: absolute;
+    inset: 0;
+    border: 0;
+    background: rgba(39, 39, 35, 0.44);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .mobileMenuBackdrop.isOpen .mobileMenuScrim {
+    opacity: 1;
+  }
+
+  .mobileMenuPanel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: min(320px, 86vw);
+    height: 100%;
+    display: grid;
+    align-content: start;
+    gap: 26px;
+    padding: 28px;
+    background: var(--cream);
+    color: var(--ink);
+    transform: translateX(100%);
+    transition: transform 0.28s ease;
+    box-shadow: -24px 0 70px rgba(43, 41, 37, 0.18);
+  }
+
+  .mobileMenuBackdrop.isOpen .mobileMenuPanel {
+    transform: translateX(0);
+  }
+
+  .mobileMenuHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+  }
+
+  .mobileMenuHeader p {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-family: var(--font-secondary);
+    font-size: 12px;
+    color: var(--purple);
+  }
+
+  .mobileMenuHeader button {
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(84, 58, 97, 0.26);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--purple);
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  .mobileMenuLinks {
+    display: grid;
+    gap: 8px;
+  }
+
+  .mobileMenuLinks a {
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(43, 41, 37, 0.1);
+    font-family: var(--font-secondary);
+    font-size: 28px;
+    line-height: 1.05;
+    color: var(--ink);
   }
 
   .heroContent {

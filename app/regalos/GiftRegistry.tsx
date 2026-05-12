@@ -38,6 +38,7 @@ type Reservation = {
   giftName: string;
   guestName: string;
   guestPhone: string;
+  comments: string;
 };
 
 export default function GiftRegistry() {
@@ -46,6 +47,7 @@ export default function GiftRegistry() {
   const [selectedGift, setSelectedGift] = useState<Gift | null>(null);
   const [guestName, setGuestName] = useState('');
   const [guestPhone, setGuestPhone] = useState('');
+  const [giftComments, setGiftComments] = useState('');
   const [isSaving, setIsSaving] = useState(false);
   const [message, setMessage] = useState('');
   const [modalMessage, setModalMessage] = useState('');
@@ -107,6 +109,7 @@ export default function GiftRegistry() {
     setSelectedGift(gift);
     setGuestName('');
     setGuestPhone('');
+    setGiftComments('');
     setMessage('');
     setModalMessage('');
   }
@@ -164,6 +167,7 @@ export default function GiftRegistry() {
           giftName: selectedGift.name,
           guestName: guestName.trim(),
           guestPhone,
+          comments: giftComments.trim(),
         };
 
         transaction.set(reservationRef, {
@@ -175,6 +179,7 @@ export default function GiftRegistry() {
       setSelectedGift(null);
       setGuestName('');
       setGuestPhone('');
+      setGiftComments('');
       setMessage('Gracias. Marcamos ese regalo como reservado.');
     } catch (error) {
       if (error instanceof Error && error.message === 'reserved') {
@@ -195,7 +200,11 @@ export default function GiftRegistry() {
         </Link>
 
         <p className={styles.eyebrow}>Lista de regalos</p>
-        <h1>Aritza & Edward</h1>
+        <h1 className={styles.giftNames}>
+          <span>Aritza</span>
+          <span>y</span>
+          <span>Edward</span>
+        </h1>
 
         <p>
           Tu presencia es el regalo más importante. Pero si deseas tener un
@@ -373,6 +382,16 @@ export default function GiftRegistry() {
                 maxLength={12}
                 inputMode="tel"
                 placeholder="829-000-0000"
+              />
+            </label>
+
+            <label>
+              Comentarios
+              <textarea
+                value={giftComments}
+                onChange={(event) => setGiftComments(event.target.value)}
+                rows={3}
+                placeholder="Opcional"
               />
             </label>
 

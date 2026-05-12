@@ -3,6 +3,7 @@ import Countdown from './components/Countdown';
 import Reveal from './components/Reveal';
 import MapSection from './components/MapSection';
 import FAQAccordion from './components/FAQAccordion';
+import MobileMenu from './components/MobileMenu';
 
 const weddingDate = '2026-06-20T17:00:00-04:00';
 
@@ -55,7 +56,7 @@ const faqItems = [
   {
     question: '¿Puedo llevar niños?',
     answer:
-      'Más adelante compartiremos los detalles finales junto con la confirmación de asistencia.',
+      'Aunque amamos a los pequeños, hemos decidido celebrar este día en un ambiente solo para adultos. Esperamos que puedan acompañarnos y disfrutar de una noche para relajarse, bailar y celebrar con nosotros.',
   },
   {
     question: '¿Hay parqueo?',
@@ -89,6 +90,11 @@ function sectionHref(item: string) {
 }
 
 export default function Home() {
+  const navLinks = navItems.map((item) => ({
+    label: item,
+    href: sectionHref(item),
+  }));
+
   return (
     <main>
       <section id="inicio" className="hero">
@@ -104,12 +110,22 @@ export default function Home() {
 
         <nav className="nav">
           <div className="navLinks">
-            {navItems.map((item) => (
-              <a key={item} href={sectionHref(item)}>
-                {item}
+            {navLinks.map((item) => (
+              <a key={item.href} href={item.href}>
+                {item.label}
               </a>
             ))}
           </div>
+
+          <MobileMenu
+            links={[
+              ...navLinks,
+              {
+                label: 'RSVP',
+                href: '/rsvp',
+              },
+            ]}
+          />
         </nav>
 
         <div className="heroContent">
